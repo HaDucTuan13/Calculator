@@ -59,15 +59,16 @@ operators.forEach(button=>{
             const a = parseFloat(firstNumber);
             const b = parseFloat(secondNumber);
             const result= operate(a,operator,b);
-            display.textContent=result.toFixed(2);
-            if(typeof(result)=="number"){
-            firstNumber=result.toString();
-            secondNumber="";
-        }else{
             display.textContent=result;
-            firstNumber="";
-        }
-        secondNumber="";
+
+            if(typeof(result)=="number"){
+                firstNumber=result.toString();
+                secondNumber="";
+            }else{
+                display.textContent=result;
+                firstNumber="";
+                secondNumber="";
+            }
         }else{
             operator=button.textContent;
             display.textContent = operator;
