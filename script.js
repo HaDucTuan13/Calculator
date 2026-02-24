@@ -125,19 +125,16 @@ decimal.addEventListener("click",()=>{
     }
 })
 
-backspace.addEventListener("click",()=>{
-    if (operator==null){
-        if(!firstNumber.includes(".")){
-            firstNumber = firstNumber.slice(0,-1);
-            display.textContent=firstNumber;
-        }
-    }else {
-        if(!secondNumber.includes(".")){
-            secondNumber = secondNumber.slice(0,-1);
-            display.textContent+=secondNumber;
-        }
-    }
+backspace.addEventListener("click", () => {
+  if (operator === null) {
+    firstNumber = firstNumber.slice(0, -1);
+    display.textContent = firstNumber;
+  } else {
+    secondNumber = secondNumber.slice(0, -1);
+    display.textContent = secondNumber;
+  }
 });
+
 
 document.addEventListener("keydown", (event) => {
   const key = event.key;
